@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const joke = require('./routes/joke.route'); 
 const app = express();
+const cors = require('cors');
 
 // Set up mongoose connection
 let dev_db_url = 'mongodb://teste:teste123@ds051534.mlab.com:51534/chuckjokes';
@@ -20,6 +21,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/joke', joke);
+app.use(cors());
 
 let port = 1234;
 
