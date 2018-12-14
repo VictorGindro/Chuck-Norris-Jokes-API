@@ -45,7 +45,7 @@ exports.joke_details = function (req, res) {
 exports.joke_update = function (req, res) {
     Joke.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, joke) {
         if (err) return res.send(err);
-        res.send('Updated successfully!');
+        res.send("Joke "+joke._id+' Updated successfully!');
     });
 };
 

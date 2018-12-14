@@ -2,7 +2,7 @@
   "name": "chuck-norris-api",
   "version": "1.0.0",
   "description": "Chuck Norris Jokes API in node.js with mongoose.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

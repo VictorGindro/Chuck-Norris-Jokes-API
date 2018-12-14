@@ -6,7 +6,7 @@ const joke = require('./routes/joke.route');
 const app = express();
 
 // Set up mongoose connection
-let dev_db_url = 'mongodb://bringto:resource123@ds121248.mlab.com:21248/chuck-norris-jokes';
+let dev_db_url = 'mongodb://teste:teste123@ds051534.mlab.com:51534/chuckjokes';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 mongoose.connect(mongoDB);
