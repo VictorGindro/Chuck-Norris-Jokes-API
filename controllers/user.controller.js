@@ -6,14 +6,14 @@ exports.test = function (req, res) {
 };
 
 exports.user_create = function (req, res) {
-    let joke = new Joke(
+    let user = new User(
         {
             email: req.body.email,
             senha: req.body.senha
         }
     );
 
-    User.save(function (err) {
+    user.save(function (err) {
         if (err) {
             res.send(err);
         }
@@ -26,7 +26,7 @@ exports.user_find_all = function (req, res) {
     User.find(function(err, users){
         if (err)
             res.send(err);
-        res.send(Users);
+        res.send(users);
     });
 }
 
@@ -39,9 +39,14 @@ exports.user_details = function (req, res) {
 };
 // find one
 exports.user_find_one = function (req, res){
-    User.findOne(req.params.email, function(err,user){
-        if (err) return res.send(err);
-        res.send(user.senha);
+    let query = {email:req.params.email,senha:req.params.senha};
+    User.findOne(query, function(err,user){
+        if(err) return res.send(err);
+        if(user){
+            res.send("Ok");
+        }else{
+            res.send("N");
+        }
     })
 }
 // update

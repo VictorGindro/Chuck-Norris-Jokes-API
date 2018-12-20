@@ -7,12 +7,13 @@ exports.test = function (req, res) {
 
 exports.joke_create = function (req, res) {
     let joke = new Joke(
-        {
+        {  
             icon_url: req.body.icon_url,
             url: req.body.url,
             category: req.body.category,
             value: req.body.value,
-            favorite: req.body.favorite
+            favorite: req.body.favorite,
+            index: req.body.index,
         }
     );
 

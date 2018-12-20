@@ -2,7 +2,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const joke = require('./routes/joke.route'); 
+const joke = require('./routes/joke.route');
+const user = require('./routes/user.route');  
 const app = express();
 const cors = require('cors');
 
@@ -21,6 +22,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/joke', joke);
+app.use('/user', user);
 app.use(cors());
 
 let port = 1234;

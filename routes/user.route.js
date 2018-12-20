@@ -9,7 +9,10 @@ router.get('/test', user_controller.test);
 router.post('/create', user_controller.user_create);
 
 // find one
-router.get('/find', user_controller.user_find_one);
+router.get('/find/:email/:senha', user_controller.user_find_one);
+
+// find all
+router.get('/findAll', user_controller.user_find_all);
 
 // find by id
 router.get('/:id', user_controller.user_details);
